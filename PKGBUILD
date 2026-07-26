@@ -15,4 +15,5 @@ package() {
     rm ${pkgdir}.MTREE
     rm ${pkgdir}.INSTALL
     rm ${pkgdir}.BUILDINFO
+    rm ${pkgdir}var/lib/lkpm/db.json
 }
