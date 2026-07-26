@@ -21,4 +21,5 @@ package() {
     if [ -f "${pkgdir}/var/lib/lkpm/db.json" ]; then
         sed -i "s|${pkgdir}||g" "${pkgdir}/var/lib/lkpm/db.json"
     fi
+    rm -rf "${pkgdir}/var/cache/lkpm"
 }
