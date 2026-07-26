@@ -18,4 +18,5 @@ package() {
     rm -f "${pkgdir}/.INSTALL"
     rm -f "${pkgdir}/.BUILDINFO"
     rm -f "${pkgdir}/var/lib/lkpm/db.json"
+    rm -rf "${pkgdir}/var/cache/lkpm"
 }
