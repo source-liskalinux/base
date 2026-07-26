@@ -12,8 +12,8 @@ license=('General Public License v3 or Later')
 depend=('lkpm')
 package() {
     lkpm -i --root=${pkgdir} bash bzip2 coreutils file filesystem findutils gawk gcc-libs gettext glibc grep gzip iproute2 iputils licenses lkpm lkchroot pciutils procps-ng psmisc sed shadow systemd systemd-sysvcompat tar util-linux xz --noconfirm
-    rm ${pkgdir}.MTREE
-    rm ${pkgdir}.INSTALL
-    rm ${pkgdir}.BUILDINFO
-    rm ${pkgdir}var/lib/lkpm/db.json
+    rm ${pkgdir}/.MTREE
+    rm ${pkgdir}/.INSTALL
+    rm ${pkgdir}/.BUILDINFO
+    rm ${pkgdir}/var/lib/lkpm/db.json
 }
