@@ -4,7 +4,7 @@
 # Maintainer: Janorovic Volkov <janorovicvolkov@gmail.com>
 
 pkgname=base
-pkgver=1.0.0
+pkgver=1
 pkgrel=1
 pkgdesc="Liska Base Systems Monolithic Bundle"
 arch=('x86_64')
