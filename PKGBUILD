@@ -13,7 +13,8 @@ depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk'
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
          'licenses' 'lkpm' 'lkchroot' 'pciutils' 'procps-ng' 'psmisc' 'sed' 
          'shadow' 'systemd' 'systemd-sysvcompat' 'tar' 'util-linux' 'xz' 
-         'ca-certificates' 'nghttp3' 'nghttp2' 'openssl')
+         'ca-certificates' 'openssl' 'libnghttp3' 'libnghttp2' 'libpsl' 
+         'libidn2' 'brotli')
 options=('!strip' '!debug')
 
 package() {
