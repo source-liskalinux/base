@@ -16,7 +16,7 @@ depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk'
          'ca-certificates' 'ca-certificates-utils' 'openssl' 'libnghttp3' 
          'libnghttp2' 'libpsl' 'libidn2' 'brotli' 'busybox' 'cpio' 'nano'
          'networkmanager' 'modemmanager' 'usb_modeswitch' 'inetutils'
-         'libverto')
+         'libverto' 'lkinit')
 options=('!strip' '!debug')
 
 package() {
