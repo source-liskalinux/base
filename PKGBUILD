@@ -16,6 +16,7 @@ depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk'
          'ca-certificates' 'ca-certificates-utils' 'openssl' 'libnghttp3' 
          'libnghttp2' 'libpsl' 'libidn2' 'brotli' 'busybox' 'cpio' 'nano'
          'inetutils' 'libverto' 'lkinit')
+makedepends=('lkpm')
 options=('!strip' '!debug')
 
 package() {
