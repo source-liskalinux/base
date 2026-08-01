@@ -8,7 +8,7 @@ pkgver=1
 pkgrel=1
 pkgdesc="Liska Base Systems Monolithic Bundle"
 arch=('x86_64')
-license=('General Public License v3 or Later')
+license=('GPL-3.0-or-later')
 depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk' 
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
          'licenses' 'lkpm' 'lkchroot' 'pciutils' 'procps-ng' 'psmisc' 'sed' 
