@@ -11,11 +11,11 @@ arch=('x86_64')
 license=('GPL-3.0-or-later')
 depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk' 
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
-         'licenses' 'lkpm' 'lkchroot' 'pciutils' 'procps-ng' 'psmisc' 'sed' 
+         'licenses' 'lkpm' 'lkinit' 'lkchroot' 'pciutils' 'procps-ng' 'psmisc' 'sed' 
          'shadow' 'systemd' 'systemd-sysvcompat' 'tar' 'util-linux' 'xz' 
          'ca-certificates' 'ca-certificates-utils' 'openssl' 'libnghttp3' 
          'libnghttp2' 'libpsl' 'libidn2' 'brotli' 'busybox' 'cpio' 'nano'
-         'inetutils' 'libverto' 'lkinit')
+         'inetutils' 'libverto')
 makedepends=('lkpm')
 options=('!strip' '!debug')
 
@@ -28,7 +28,7 @@ package() {
         for e; do [[ "$e" == "$match" ]] && return 0; done
         return 1
     }
-    echo "===> [INFO]: Resolving base system dependencies recursively..."
+    echo "--> [PACKAGE] Resolving base system dependencies recursively...."
     while [ ${#queue[@]} -gt 0 ]; do
         local pkg="${queue[0]}"
         queue=("${queue[@]:1}")
@@ -38,11 +38,11 @@ package() {
         if in_array "$pkg" "${processed[@]}"; then
             continue
         fi
-        echo "===> [INFO]: Installing core package into base bundle: ${pkg}"
+        echo "--> [PACKAGE] Installing core package into base bundle: ${pkg}"
         if lkpm -i --root="${pkgdir}" "$pkg" --noconfirm; then
             processed+=("$pkg")
         else
-            echo "===> [ERR]: Failed to install $pkg, skipping..."
+            echo "--> [PACKAGE] Failed to install $pkg! Skipping...."
             continue
         fi
         local missing_deps
@@ -50,7 +50,7 @@ package() {
         for dep in $missing_deps; do
             if [[ -n "$dep" && ! "$dep" == *.so* ]]; then
                 if ! in_array "$dep" "${processed[@]}" && ! in_array "$dep" "${queue[@]}"; then
-                    echo "  -> Found missing sub-dependency: $dep (adding to queue)"
+                    echo "  ---> Found missing sub-dependency: $dep (adding to queue)"
                     queue+=("$dep")
                 fi
             fi
