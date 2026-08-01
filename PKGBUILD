@@ -46,7 +46,7 @@ package() {
             continue
         fi
         local missing_deps
-        missing_deps=$(lkpm -l "$pkg" --root="${pkgdir}" 2>/dev/null | grep "(missing)" | sed 's/>//g' | sed 's/(missing)//g' | awk '{print $1}')
+        missing_deps=$(lkpm -d "$pkg" --root="${pkgdir}" 2>/dev/null | grep "(missing)" | sed 's/>//g' | sed 's/(missing)//g' | awk '{print $1}')
         for dep in $missing_deps; do
             if [[ -n "$dep" && ! "$dep" == *.so* ]]; then
                 if ! in_array "$dep" "${processed[@]}" && ! in_array "$dep" "${queue[@]}"; then
