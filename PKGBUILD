@@ -57,9 +57,9 @@ package() {
         done
     done
     rm -f "${pkgdir}"/.{MTREE,INSTALL,BUILDINFO}
-    if [ -f "${pkgdir}/var/lib/lkpm/db.json" ]; then
-        sed -i "s|${pkgdir}||g" "${pkgdir}/var/lib/lkpm/db.json"
-        mv "${pkgdir}/var/lib/lkpm/db.json" "${pkgdir}/var/lib/lkpm/db.base.json"
+    if [ -f "${pkgdir}/var/lib/lkpm/db.sqlite" ]; then
+        sed -i "s|${pkgdir}||g" "${pkgdir}/var/lib/lkpm/db.sqlite"
+        mv "${pkgdir}/var/lib/lkpm/db.sqlite" "${pkgdir}/var/lib/lkpm/db.base.sqlite"
     fi
     rm -rf "${pkgdir}/var/cache/lkpm"
 }
