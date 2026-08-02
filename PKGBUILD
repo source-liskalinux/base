@@ -16,7 +16,7 @@ depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk'
          'util-linux' 'xz' 'ca-certificates' 'ca-certificates-utils' 'openssl' 
          'libnghttp3' 'libnghttp2' 'libpsl' 'libidn2' 'brotli' 'busybox' 
          'cpio' 'nano' 'inetutils' 'libverto')
-makedepends=('lkpm')
+makedepends=('lkpm' 'sqlite')
 options=('!strip' '!debug')
 
 package() {
@@ -56,9 +56,13 @@ package() {
             fi
         done
     done
-    rm -f "${pkgdir}"/.{MTREE,INSTALL,BUILDINFO}
     if [ -f "${pkgdir}/var/lib/lkpm/db.sqlite" ]; then
-        sed -i "s|${pkgdir}||g" "${pkgdir}/var/lib/lkpm/db.sqlite"
+        echo "--> [PACKAGE] Cleaning absolute chroot paths in lkpm DB...."
+        sqlite3 "${pkgdir}/var/lib/lkpm/db.sqlite" <<EOF
+UPDATE installed_packages SET package_path = REPLACE(package_path, '${pkgdir}', '');
+UPDATE installed_packages SET files = REPLACE(files, '${pkgdir}', '');
+VACUUM;
+EOF
         mv "${pkgdir}/var/lib/lkpm/db.sqlite" "${pkgdir}/var/lib/lkpm/db.base.sqlite"
     fi
     rm -rf "${pkgdir}/var/cache/lkpm"
