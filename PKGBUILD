@@ -11,11 +11,11 @@ arch=('x86_64')
 license=('GPL-3.0-or-later')
 depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk' 
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
-         'licenses' 'lkpm' 'lkinit' 'lkchroot' 'lkmake' 'lkfs' 'pciutils' 'procps-ng'
-         'psmisc' 'sed' 'shadow' 'systemd' 'systemd-sysvcompat' 'tar' 
-         'util-linux' 'xz' 'ca-certificates' 'ca-certificates-utils' 'openssl' 
-         'libnghttp3' 'libnghttp2' 'libpsl' 'libidn2' 'brotli' 'busybox' 
-         'cpio' 'nano' 'inetutils' 'krb5')
+         'licenses' 'lkpm' 'lkinit' 'lkchroot' 'lkmake' 'lkfs' 'pciutils' 
+         'procps-ng' 'psmisc' 'sed' 'shadow' 'systemd' 'systemd-sysvcompat' 
+         'tar' 'util-linux' 'xz' 'ca-certificates' 'ca-certificates-utils' 
+         'openssl' 'libnghttp3' 'libnghttp2' 'libpsl' 'libidn2' 'brotli' 
+         'busybox' 'cpio' 'nano' 'inetutils' 'krb5' 'kmod')
 makedepends=('lkpm' 'sqlite')
 options=('!strip' '!debug')
 
