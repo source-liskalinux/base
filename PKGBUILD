@@ -7,7 +7,7 @@ pkgname=base
 pkgver=1
 pkgrel=1
 pkgdesc="Liska Base Systems Monolithic Bundle"
-arch=('x86_64')
+arch=('any')
 license=('GPL-3.0-or-later')
 depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk' 
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
@@ -15,3 +15,4 @@ depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk'
          'sed' 'shadow' 'lksystem' 'tar' 'util-linux' 'xz' 'ca-certificates' 
          'ca-certificates-utils' 'openssl' 'libnghttp3' 'libnghttp2' 'libpsl' 
          'libidn2' 'brotli' 'busybox' 'cpio' 'nano' 'inetutils' 'krb5' 'kmod')
+optdepends=('linux')
