@@ -8,6 +8,7 @@ pkgver=1
 pkgrel=1
 pkgdesc="Liska Base Systems Monolithic Bundle"
 arch=('any')
+url="https://github.com/source-liskalinux/base"
 license=('GPL-3.0-or-later')
 depends=('bash' 'bzip2' 'coreutils' 'file' 'filesystem' 'findutils' 'gawk' 
          'gcc-libs' 'gettext' 'glibc' 'grep' 'gzip' 'iproute2' 'iputils' 
